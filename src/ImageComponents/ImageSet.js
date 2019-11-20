@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import ImageDes from "./ImageDes";
+
 
 export default function ImageSet() {
 
@@ -13,22 +15,26 @@ export default function ImageSet() {
 // title: "Milky Way over Uruguayan Lighthouse"
 // url: "https://apod.nasa.gov/apod/image/1911/LighthouseMilkyWay_Salazar_960.jpg"
 
-    const [image, setImage] = useState([]);
+    const [imageData, setImageData] = useState({});
     
     const didUpdate = () => {
         axios
             .get("https://api.nasa.gov/planetary/apod?api_key=PsVAVhFVcMYkBCIbBFzidg1gScBQ94QGkYq8Ig7y")
             .then(response => {
                 console.log(response.data);
-                setImage(response.data);
+                setImageData(response.data);
             })
             .catch(error => console.log(error));
     };
 
     useEffect(didUpdate, []);
     
+    console.log(imageData.url)
 
     return (
-        <div>Image Set</div>
+        
+        <ImageDes imageData={imageData}/>
+        
     )
 }
+
