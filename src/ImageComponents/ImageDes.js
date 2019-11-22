@@ -1,5 +1,6 @@
 import React from "react";
 // import ImageSet from "./ImageSet";
+import styled from "styled-components";
 
 function ImageDes(props) {
 
@@ -13,6 +14,10 @@ function ImageDes(props) {
 // url: "https://apod.nasa.gov/apod/image/1911/LighthouseMilkyWay_Salazar_960.jpg"
     
 
+const MainContent = styled.div`
+        
+`;
+
 console.log(props.imageInfo)
 
     return (
@@ -22,6 +27,7 @@ console.log(props.imageInfo)
             <h2>{props.imageData.title}</h2>
             <span>{props.imageData.copyright}</span>
             <p>{props.imageData.explanation}</p>
+            {/* <input type="date" name="call"></input> */}
         </div>
     )
 
