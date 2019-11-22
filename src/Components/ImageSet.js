@@ -17,6 +17,7 @@ export default function ImageSet() {
 
     const [imageData, setImageData] = useState({});
     
+    //Naming didUpdate should be changed since a 
     const didUpdate = () => {
         axios
             .get("https://api.nasa.gov/planetary/apod?api_key=PsVAVhFVcMYkBCIbBFzidg1gScBQ94QGkYq8Ig7y")

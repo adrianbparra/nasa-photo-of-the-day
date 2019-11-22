@@ -15,20 +15,45 @@ function ImageDes(props) {
     
 
 const MainContent = styled.div`
-        
+    padding: 5% 10%;
 `;
+
+
+const NasaImg = styled.img`
+    width: 80%;
+    cursor:pointer;
+`;
+
+const NasaPara = styled.p`
+    font-spacing: 1.5;
+`;
+
+const NasaH2 = styled.h2`
+    font-size: 2rem;
+`;
+
+const NasaCopyright = styled.span`
+    display:none;
+`;
+
+function textAppear (){
+    console.log("Over mouse")
+};
 
 console.log(props.imageInfo)
 
     return (
 
-        <div>
-            <img src={`${props.imageData.hdurl}`} alt={`${props.imageData.title}`}/>
-            <h2>{props.imageData.title}</h2>
-            <span>{props.imageData.copyright}</span>
-            <p>{props.imageData.explanation}</p>
+        <MainContent>
+            
+            <NasaImg onMouseOver={textAppear} src={`${props.imageData.hdurl}`} alt={`${props.imageData.title}`}/>
+            <NasaCopyright>Photographer: {props.imageData.copyright}</NasaCopyright>
+            
+            <NasaH2>{props.imageData.title}</NasaH2> 
+            <p>{props.imageData.date}</p>
+            <NasaPara>{props.imageData.explanation}</NasaPara>
             {/* <input type="date" name="call"></input> */}
-        </div>
+        </MainContent>
     )
 
 
